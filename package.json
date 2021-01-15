@@ -1,0 +1,25 @@
+{
+  "name": "@mapleafgo/next-less",
+  "version": "0.0.1",
+  "description": "nextjs_v9+ less-loader",
+  "main": "index.js",
+  "author": "mapleafgo",
+  "license": "MIT",
+  "dependencies": {
+    "less-loader": "^7.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "12",
+    "less": "^4.1.0",
+    "typescript": "^4.1.3",
+    "webpack": "^5.13.0"
+  },
+  "peerDependencies": {
+    "less": "^4.1.0"
+  },
+  "keywords": [
+    "nextjs",
+    "less",
+    "loader"
+  ]
+}
