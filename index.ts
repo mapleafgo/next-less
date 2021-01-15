@@ -5,12 +5,16 @@ import {
   RuleSetUseItem,
 } from "webpack";
 
+function isSass(test?: RuleSetConditionAbsolute) {
+  return `${test}`.endsWith(".(scss|sass)$/");
+}
+
 function getLessTest(test: RuleSetConditionAbsolute): RuleSetConditionAbsolute {
   const testStr = `${test}`.replace(".(scss|sass)", ".less");
   return RegExp(testStr.slice(1, testStr.length - 1));
 }
 
-function getLessUse(use: any, lessOptions): RuleSetUseItem {
+function getLessUse(use: any, lessOptions: Less.Options): RuleSetUseItem {
   if (`${use.loader}`.includes("sass-loader")) {
     const { implementation: _, sassOptions: __, ...useOptions } = use.options;
     return {
@@ -24,9 +28,9 @@ function getLessUse(use: any, lessOptions): RuleSetUseItem {
   return use;
 }
 
-module.exports = (lessOptions: any = {}, nextConfig: any = {}) => {
+module.exports = (lessOptions: Less.Options = {}, nextConfig: any = {}) => {
   return Object.assign({}, nextConfig, {
-    webpack: (config: Configuration, options) => {
+    webpack: (config: Configuration, options: any) => {
       if (!options.defaultLoaders) {
         throw new Error(
           "This plugin is not compatible with Next.js versions below 5.0.0 https://err.sh/next-plugins/upgrade"
@@ -50,9 +54,9 @@ module.exports = (lessOptions: any = {}, nextConfig: any = {}) => {
 
       const sassRules = rule.oneOf.filter((item) => {
         if (Array.isArray(item.test)) {
-          return item.test.some((test) => `${test}`.endsWith(".(scss|sass)$/"));
+          return item.test.some((test) => isSass(test));
         } else {
-          return `${item.test}`.endsWith(".(scss|sass)$/");
+          return isSass(item.test);
         }
       });
 
