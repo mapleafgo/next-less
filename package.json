@@ -1,6 +1,6 @@
 {
   "name": "@wenkang365t/next-less",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "nextjs_v9+ less-loader",
   "main": "index.js",
   "author": "mapleafgo",
