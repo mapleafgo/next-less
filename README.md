@@ -2,7 +2,7 @@
 
 Use the latest official support for sass to support less
 
-```
+```bash
 npm i @wenkang365t/next-less less
 // or
 yarn add @wenkang365t/next-less less
