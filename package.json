@@ -5,6 +5,9 @@
   "main": "index.js",
   "author": "mapleafgo",
   "license": "MIT",
+  "scripts": {
+    "publish": "tsc && npm publish"
+  },
   "dependencies": {
     "less-loader": "^7.2.1"
   },
