@@ -5,6 +5,7 @@
   "main": "index.js",
   "author": "mapleafgo",
   "license": "MIT",
+  "homepage": "https://github.com/mapleafgo/next-less",
   "scripts": {
     "publish": "tsc && npm publish"
   },
