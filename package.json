@@ -1,7 +1,7 @@
 {
-  "name": "@wenkang365t/next-less",
-  "version": "0.0.2",
-  "description": "nextjs_v9+ less-loader",
+  "name": "@mapleafgo/next-less",
+  "version": "0.0.1",
+  "description": "Next.js v9.3+ Less Support",
   "main": "index.js",
   "author": "mapleafgo",
   "license": "MIT",
